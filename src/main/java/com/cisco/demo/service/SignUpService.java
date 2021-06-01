@@ -23,8 +23,9 @@ public class SignUpService {
 	private ConcurrentHashMap<String,SignUpInfo > data  = new ConcurrentHashMap<>();
 	
 	private ConcurrentHashMap<String, Tutorial> tutorials  = new ConcurrentHashMap<>();
-	public  void saveSignUpInfo(SignUpInfo signUpInfo) {
+	public  boolean saveSignUpInfo(SignUpInfo signUpInfo) {
 		data.put(signUpInfo.getId(), signUpInfo);
+		return true;
 		
 	}
 	public SignUpInfo findSignUpInfo(String id) {

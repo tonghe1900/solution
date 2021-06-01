@@ -21,6 +21,7 @@ import com.cisco.demo.service.SignUpService;
 //development environment of the developer.
 @RestController
 public class SignUpController {
+	public static final String SIGN_UP_SUCCESSFULLY = "sign up successfully";
 	@Autowired
 	private SignUpService signUpService;
 	@PostMapping("/programs/signup")
@@ -29,7 +30,7 @@ public class SignUpController {
 	 
 		signUpService.saveSignUpInfo(signUpInfo);
 		
-	    return new SignUpProgramResult(HttpStatus.OK, "sign up successfully");
+	    return new SignUpProgramResult(HttpStatus.OK, SIGN_UP_SUCCESSFULLY);
 	   
 	}
 	
